@@ -29,9 +29,9 @@ function renderFilter(arr) {
     if (arr.length > 2 && arr.length <= 10) {
         ul.innerHTML = createList(arr)
     } else
-        if (arr.length = 1) {
+        if (arr.length === 1) {
             div.innerHTML = createInfo(...arr)
-        }else return
+        }
 }
 //error
 function onFetchError() {
