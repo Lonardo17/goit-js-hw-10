@@ -26,15 +26,16 @@ function renderFilter(arr) {
     if (arr.length > 10) {
         Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
     } else
-    if (arr.length > 2 && arr.length <= 10) {
-        ul.innerHTML = createList(arr)
-    } else
-        if (arr.length === 1) {
-            div.innerHTML = createInfo(...arr)
-        }
+        if (arr.length > 2 && arr.length <= 10) {
+            ul.innerHTML = createList(arr)
+        } else
+            if (arr.length === 1) {
+                div.innerHTML = createInfo(...arr)
+            } else rejected
 }
 //error
 function onFetchError() {
+    console.log("hi")
     Notiflix.Notify.failure("Oops, there is no country with that name");
 }
 // створення списку
