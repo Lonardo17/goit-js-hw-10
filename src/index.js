@@ -12,12 +12,12 @@ function onSearch(ev) {
     ev.preventDefault();
     ul.innerHTML = ""
     div.innerHTML =""
-    const search = ev.target.value;
+    const search = ev.target.value.trim();
     if (!search) {
          return
     }
      
-    API.fetchCountry(search.trim())
+    API.fetchCountry(search)
         .then(renderFilter)
         .catch(onFetchError)
 }
@@ -35,7 +35,6 @@ function renderFilter(arr) {
 }
 //error
 function onFetchError() {
-    console.log("hi")
     Notiflix.Notify.failure("Oops, there is no country with that name");
 }
 // створення списку
